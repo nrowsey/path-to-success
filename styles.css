@@ -39,12 +39,14 @@ a { color: inherit; text-decoration: none; }
 }
 
 /* GLOBAL STYLES (mobile first/small) */
+/* GLOBAL STYLES (mobile first/small) */
 body{
-  background: var(--bg);  /* background strip behind mobike content */
+  background: var(--bg);         /* lavender/blue strip */
   color: var(--ink);
   font: var(--fs-base)/1.5 var(--font-body);
-  display: flex;
-  justify-content: center;
+  /* center the 450px column while keeping vertical stack */
+  display: block;                /* or flex-direction: column */
+  margin: 0;
 }
 
 /* narrow centered column for header/main/footer */
