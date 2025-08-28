@@ -148,14 +148,17 @@ section + section{ margin-top: 14px; }
 #services h4{ color: #173a87; }
 #services p{ margin: 4px 0 0; color: var(--ink-subtle); font-size: var(--fs-sm); }
 
-/* WHY CHOOSE US */
+/* WHY CHOOSE US (PINK band; tiles centered; white heading; attached) */
 #why-choose-us{
-  background: var(--white);
+  background: var(--pink);
   color: var(--dark);
-  border-radius: 0;   /* square like mock */
+  border-radius: 0;       /* square like mock */
   padding: 12px;
+  margin-top: 0;          /* attach to section above */
+  margin-bottom: 0;       /* attach to section below */
 }
-#why-choose-us h2{ color: var(--dark); }
+#why-choose-us h2{ color: var(--white); } /* heading should be white */
+
 #why-choose-us .benefits{
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -177,9 +180,14 @@ section + section{ margin-top: 14px; }
 #why-choose-us .benefit:nth-child(1){ background: var(--teal); }
 #why-choose-us .benefit:nth-child(2){ background: var(--lavender); }
 #why-choose-us .benefit:nth-child(3){ background: var(--yellow); }
-#why-choose-us .benefit:nth-child(4){ background: var(--white); }
+#why-choose-us .benefit:nth-child(4){
+  background: var(--white); /* white tile */
+  border: none;             /* NO border */
+  box-shadow: none;
+}
 
 /* PRICING TABLES (yellow header, white cells, ALL CAPS, square) */
+#pricing{ margin-top: 0; } /* attach below Why Choose Us */
 #pricing article{ margin-bottom: 16px; }
 #pricing h3{ color: var(--yellow); }
 #pricing table{
@@ -214,7 +222,7 @@ section + section{ margin-top: 14px; }
 #pricing tbody tr:first-child td{ border-top: 2px solid var(--yellow); }
 #pricing tbody td:last-child{ border-right: 2px solid var(--yellow); }
 
-/* CTA */
+/* CTA (pink) ATTACHED — no inner light panel, square edges) */
 #contact{
   background: var(--pink);
   color: var(--white);
@@ -226,7 +234,7 @@ section + section{ margin-top: 14px; }
 #contact h2{ color: var(--white); }
 #contact p{
   margin: 10px 0 14px;
-  color: var(--white);      
+  color: var(--white);      /* no lighter pink bubble */
   background: transparent;
 }
 .button{
@@ -246,7 +254,7 @@ section + section{ margin-top: 14px; }
 footer{
   width: 100%;
   max-width: 450px;
-  margin: 0 auto 30px;   /* attached to CTA above */
+  margin: 0 auto 30px;   /* attached to CTA above; 30px breathing room below page */
   background: var(--panel);
   color: var(--white);
   padding: 12px;
@@ -263,17 +271,3 @@ footer a{ color: var(--white); text-decoration: underline; }
 /* helpers */
 h2 + h3{ margin-top: -2px; }
 #services > h2{ margin-top: 6px; }
-/* --- FINAL TWEAKS: Why Choose Us --- */
-#why-choose-us{
-  background: var(--pink);   /* coral band */
-  border-radius: 0;          /* square edges */
-  margin-top: 0;             /* attach to section above */
-  margin-bottom: 0;          /* attach to section below */
-  padding: 12px;
-}
-#why-choose-us h2{
-  color: var(--white);       /* heading should be white */
-}
-
-/* Attach the next panel (Pricing) so no gap under the pink band */
-#pricing{ margin-top: 0; }
