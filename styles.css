@@ -23,10 +23,10 @@ a { color: inherit; text-decoration: none; }
   --white: #FFFFFF;
 
   /* App tokens */
-  --bg: var(--lavender);      /* page strip */
-  --panel: var(--purple);     /* section panels */
-  --accent: var(--yellow);    /* menu/table header */
-  --cta: var(--pink);         /* CTA */
+  --bg: var(--lavender);   /* page background strip */
+  --panel: var(--purple);  /* default section panel */
+  --accent: var(--yellow); /* menu/table header */
+  --cta: var(--pink);      /* CTA */
   --card: var(--white);
   --ink: var(--dark);
   --ink-subtle: #444;
@@ -40,11 +40,11 @@ a { color: inherit; text-decoration: none; }
   --font-body: "Inter", system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
 
   /* Required sizes */
-  --fs-h1: 3em;       /* H1 */
-  --fs-nav-h2: 1.5em; /* Nav H2 */
-  --fs-h2: 2em;       /* H2 */
-  --fs-h3: 1.5em;     /* H3 */
-  --fs-h4: 1.15em;    /* H4 */
+  --fs-h1: 3em;        /* H1 */
+  --fs-nav-h2: 1.5em;  /* NAV H2 */
+  --fs-h2: 2em;        /* H2 */
+  --fs-h3: 1.5em;      /* H3 */
+  --fs-h4: 1.15em;     /* H4 */
   --fs-base: 16px;
   --fs-sm: 13px;
   --fs-xs: 12px;
@@ -55,23 +55,23 @@ body{
   background: var(--bg);
   color: var(--ink);
   font: var(--fs-base)/1.5 var(--font-body);
-  display: block; /* keep header → main → footer stacked */
+  display: block; /* vertical stack */
 }
 
-/* Centered 450px column */
+/* centered 450px column */
 header, main, footer{
   width: 100%;
   max-width: 450px;
   margin-inline: auto;
 }
 
-/* ---- Typographic defaults ---- */
+/* headings per spec */
 h1{ font-family: var(--font-heading); font-size: var(--fs-h1); line-height: 1.1; margin: 0 0 6px; }
 h2{ font-family: var(--font-heading); font-size: var(--fs-h2); line-height: 1.2; margin: 6px 0 2px; }
 h3{ font-family: var(--font-body);   font-size: var(--fs-h3); font-weight: 800; margin: 0 0 10px; }
 h4{ font-family: var(--font-body);   font-size: var(--fs-h4); font-weight: 800; margin: 0 0 6px; }
 
-/* ---- Header ---- */
+/* HEADER */
 header{
   background: var(--panel);
   color: var(--white);
@@ -84,19 +84,18 @@ header p{
   font-size: var(--fs-sm);
 }
 
-/* ---- Nav (yellow bar + square white links, no borders) ---- */
+/* NAV (yellow bar + square white links, no outlines) */
 nav{
   background: var(--accent);
   padding: 14px 14px 18px;
   border-radius: 4px;
   margin-top: 16px;
 }
-/* Real H2: italic Inter (not Kavoon) */
 .menu-title{
   text-align: center;
-  font-family: var(--font-body);
+  font-family: var(--font-body);  /* italic Inter */
   font-style: italic;
-  font-size: var(--fs-nav-h2); /* 1.5em */
+  font-size: var(--fs-nav-h2);
   font-weight: 500;
   color: var(--dark);
   margin: 0 0 10px;
@@ -107,19 +106,18 @@ nav a{
   display: block;
   text-align: center;
   background: var(--white);
-  /* no outline / no rounding */
-  border: none;
-  border-radius: 0;
+  border: none;               /* no outline */
+  border-radius: 0;           /* square */
   box-shadow: none;
   padding: 12px 14px;
   font-weight: 900;
-  font-size: 1rem;                 /* larger */
-  color: #173a87;                  /* dark blue */
-  text-transform: uppercase;       /* ALL CAPS */
+  font-size: 1rem;            /* larger */
+  color: #173a87;             /* dark blue */
+  text-transform: uppercase;  /* ALL CAPS */
   letter-spacing: .3px;
 }
 
-/* ---- General section panel ---- */
+/* default section panel */
 section{
   background: var(--panel);
   color: var(--white);
@@ -127,15 +125,14 @@ section{
 }
 section + section{ margin-top: 14px; }
 
-/* Yellow subheads (“One-on-One Coaching”, etc.) */
+/* yellow subheads (e.g., One-on-One Coaching) */
 #services > article > h3,
 #pricing > article > h3,
 #services h3{ color: var(--yellow); font-weight: 900; }
 
-/* ---- Services cards (icon ABOVE text, left-aligned) ---- */
+/* SERVICES (icon above text, left-aligned) */
 #services article{ margin-bottom: 14px; }
 #services > article > h3{ margin-top: 4px; }
-
 #services article article{
   background: var(--card);
   color: var(--ink);
@@ -143,90 +140,93 @@ section + section{ margin-top: 14px; }
   box-shadow: var(--shadow);
   padding: 16px;
   display: grid;
-  grid-template-columns: 1fr;  /* stack */
+  grid-template-columns: 1fr; /* stack */
   align-items: start;
 }
 #services article article + article{ margin-top: 12px; }
-
-#services img{
-  width: 64px; height: 64px;
-  margin: 0 0 10px 0;          /* space under icon */
-}
-#services h4{ color: #173a87; } /* dark blue titles */
+#services img{ width: 64px; height: 64px; margin: 0 0 10px 0; }
+#services h4{ color: #173a87; }
 #services p{ margin: 4px 0 0; color: var(--ink-subtle); font-size: var(--fs-sm); }
 
-/* ---- Why Choose Us (WHITE band) ---- */
+/* WHY CHOOSE US (white band; tiles centered; black text) */
 #why-choose-us{
-  background: var(--white);     /* white per request */
+  background: var(--white);
   color: var(--dark);
-  padding-bottom: 12px;
-  border-radius: var(--round);
+  border-radius: 0;   /* square like mock */
+  padding: 12px;
 }
 #why-choose-us h2{ color: var(--dark); }
-.benefits{
+#why-choose-us .benefits{
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 14px;
-  padding-top: 6px;
+  margin-top: 8px;
 }
-.benefit{
-  border-radius: var(--radius-sm);
-  padding: 16px;
-  display: flex;                /* perfectly center text */
-  align-items: center;
-  justify-content: center;
+#why-choose-us .benefit{
+  display: flex; align-items: center; justify-content: center;
   text-align: center;
   font-weight: 900;
-  box-shadow: var(--shadow);
-  color: var(--dark);
   line-height: 1.2;
-  background: var(--white);     /* default */
+  color: var(--dark);
+  padding: 16px;
+  border-radius: var(--radius-sm);
+  box-shadow: none;
+  background: var(--white);
 }
-/* colored tiles */
-.benefit:nth-child(1){ background: var(--teal);    }
-.benefit:nth-child(2){ background: var(--lavender);}
-.benefit:nth-child(3){ background: var(--yellow);  }
-.benefit:nth-child(4){ background: var(--white);   }
+/* tile fills */
+#why-choose-us .benefit:nth-child(1){ background: var(--teal); }
+#why-choose-us .benefit:nth-child(2){ background: var(--lavender); }
+#why-choose-us .benefit:nth-child(3){ background: var(--yellow); }
+#why-choose-us .benefit:nth-child(4){ background: var(--white); }
 
-/* ---- Pricing tables (YELLOW header, WHITE cells, ALL CAPS headers) ---- */
+/* PRICING TABLES (yellow header, white cells, ALL CAPS, square) */
 #pricing article{ margin-bottom: 16px; }
 #pricing h3{ color: var(--yellow); }
 #pricing table{
+  border-collapse: separate;
+  border-spacing: 0;
   background: transparent;
-  overflow: hidden;
-  border-radius: var(--radius-sm);
-  box-shadow: var(--shadow);
+  border-radius: 0;      /* square */
+  box-shadow: none;
 }
 #pricing thead th{
-  background: var(--accent);        /* yellow header */
+  background: var(--yellow);
   color: var(--dark);
+  text-transform: uppercase;
+  letter-spacing: .4px;
   font-size: var(--fs-xs);
   padding: 12px 10px;
-  text-align: left;
-  text-transform: uppercase;        /* ALL CAPS */
-  letter-spacing: .4px;
+  border-top: 2px solid var(--yellow);
+  border-bottom: 0;
+  border-left: 2px solid var(--yellow);
+  border-right: 2px solid var(--yellow);
 }
+#pricing thead th:first-child,
+#pricing thead th:last-child{ border-radius: 0; }
 #pricing tbody td{
-  background: var(--white);         /* white cells */
-  padding: 12px 10px;
-  border-top: 1px solid rgba(0,0,0,.08);
-  font-size: 14px;
+  background: var(--white);
   color: var(--dark);
+  font-size: 14px;
+  padding: 12px 10px;
+  border-bottom: 2px solid var(--yellow);
+  border-left: 2px solid var(--yellow);
 }
-#pricing tbody td + td{ border-left: 1px solid rgba(0,0,0,.08); }
+#pricing tbody tr:first-child td{ border-top: 2px solid var(--yellow); }
+#pricing tbody td:last-child{ border-right: 2px solid var(--yellow); }
 
-/* ---- CTA (“Take the First Step Today”) ATTACHED, no inner light panel ---- */
+/* CTA (pink) ATTACHED — no inner light panel, square edges) */
 #contact{
-  background: var(--pink);          /* coral */
+  background: var(--pink);
   color: var(--white);
-  border-radius: 0;                 /* attach cleanly */
+  border-radius: 0;         /* square; attaches to footer */
   padding: 16px 12px 18px;
-  margin-top: 0;                    /* flush with previous section */
+  margin-top: 0;
+  margin-bottom: 0;
 }
 #contact h2{ color: var(--white); }
 #contact p{
   margin: 10px 0 14px;
-  color: var(--white);              /* no lighter pink bubble */
+  color: var(--white);      /* no lighter pink bubble */
   background: transparent;
 }
 .button{
@@ -242,23 +242,24 @@ section + section{ margin-top: 14px; }
   box-shadow: 0 3px 0 rgba(0,0,0,.35);
 }
 
-/* ---- Footer (purple, INLINE items, attached) ---- */
+/* FOOTER (purple, inline copyright + terms, attached, square) */
 footer{
   width: 100%;
   max-width: 450px;
-  margin: 0 auto 30px;              /* attach to CTA above */
+  margin: 0 auto 30px;   /* attached to CTA above */
   background: var(--panel);
   color: var(--white);
   padding: 12px;
   font-size: var(--fs-sm);
-  display: flex;                    /* inline copyright + terms */
+  display: flex;
   justify-content: space-between;
   align-items: center;
-  border-radius: 0 0 var(--round) var(--round);
+  border-radius: 0;      /* square bottom */
+  box-shadow: none;
 }
 footer p{ margin: 0; }
 footer a{ color: var(--white); text-decoration: underline; }
 
-/* ---- Small helpers ---- */
+/* helpers */
 h2 + h3{ margin-top: -2px; }
 #services > h2{ margin-top: 6px; }
