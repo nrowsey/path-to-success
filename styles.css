@@ -13,23 +13,20 @@ a { color: inherit; text-decoration: none; }
 
 /* ROOT VARIABLES */
 :root{
-  /* palette */
-  --bg: #6b86d6;         /* page background (periwinkle) */
-  --panel: #3f3a8a;      /* deep purple panels */
-  --accent: #eab84e;     /* gold accents */
-  --cta: #e96569;        /* coral CTA */
-  --card: #ffffff;       /* white cards */
-  --ink: #1b1b1b;        /* primary text */
-  --ink-subtle: #454545; /* secondary text */
+  --bg: #6b86d6;       /* page background (lavender/blue) */
+  --panel: #3f3a8a;    /* deep purple panels */
+  --accent: #eab84e;   /* gold */
+  --cta: #e96569;      /* coral CTA */
+  --card: #ffffff;     /* white cards */
+  --ink: #1b1b1b;      /* dark text */
+  --ink-subtle: #454545;
 
-  /* radii, shadows, spacing */
   --round: 14px;
   --radius-sm: 8px;
   --shadow: 0 4px 10px rgba(0,0,0,.08);
 
-  /* type */
   --font-heading: "Bree Serif", serif;
-  --font-body: "Inter", system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+  --font-body: "Inter", system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
   --fs-xxl: 34px;
   --fs-xl: 22px;
   --fs-lg: 16px;
@@ -39,22 +36,18 @@ a { color: inherit; text-decoration: none; }
 }
 
 /* GLOBAL STYLES (mobile first/small) */
-/* GLOBAL STYLES (mobile first/small) */
 body{
-  background: var(--bg);         /* lavender/blue strip */
+  background: var(--bg);                 /* full-page strip */
   color: var(--ink);
   font: var(--fs-base)/1.5 var(--font-body);
-  /* center the 450px column while keeping vertical stack */
-  display: block;                /* or flex-direction: column */
-  margin: 0;
+  display: block;                        /* <-- force vertical stack */
 }
 
-/* narrow centered column for header/main/footer */
+/* Center the 450px column */
 header, main, footer{
   width: 100%;
-  max-width: 450px;   /* requirement */
+  max-width: 450px;                      /* requirement */
   margin-inline: auto;
-  background: transparent;
 }
 
 /* ----- Header ----- */
@@ -68,7 +61,6 @@ header h1{
   margin: 0;
   font-size: var(--fs-xxl);
   line-height: 1.1;
-  letter-spacing: .3px;
 }
 header p{
   margin: 6px 0 0;
@@ -105,6 +97,7 @@ header nav a{
   font-weight: 900;
   font-size: var(--fs-xs);
   box-shadow: var(--shadow);
+  color: #1b1b1b;                        /* <-- make button text visible */
 }
 
 /* ----- Section chrome ----- */
@@ -127,7 +120,7 @@ section h3{
   font-family: var(--font-body);
 }
 
-/* ----- Service “cards” ----- */
+/* ----- Service cards ----- */
 #services article{ margin-bottom: 14px; }
 #services > article > h3{ margin-top: 4px; }
 
@@ -158,7 +151,7 @@ section h3{
   font-size: var(--fs-sm);
 }
 
-/* ----- Why Choose Us (4 tiles grid) ----- */
+/* ----- Why Choose Us tiles ----- */
 #why-choose-us{ padding-bottom: 8px; }
 .benefits{
   display: grid;
