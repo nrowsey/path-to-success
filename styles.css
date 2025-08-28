@@ -148,7 +148,7 @@ section + section{ margin-top: 14px; }
 #services h4{ color: #173a87; }
 #services p{ margin: 4px 0 0; color: var(--ink-subtle); font-size: var(--fs-sm); }
 
-/* WHY CHOOSE US (white band; tiles centered; black text) */
+/* WHY CHOOSE US */
 #why-choose-us{
   background: var(--white);
   color: var(--dark);
@@ -263,3 +263,17 @@ footer a{ color: var(--white); text-decoration: underline; }
 /* helpers */
 h2 + h3{ margin-top: -2px; }
 #services > h2{ margin-top: 6px; }
+/* --- FINAL TWEAKS: Why Choose Us --- */
+#why-choose-us{
+  background: var(--pink);   /* coral band */
+  border-radius: 0;          /* square edges */
+  margin-top: 0;             /* attach to section above */
+  margin-bottom: 0;          /* attach to section below */
+  padding: 12px;
+}
+#why-choose-us h2{
+  color: var(--white);       /* heading should be white */
+}
+
+/* Attach the next panel (Pricing) so no gap under the pink band */
+#pricing{ margin-top: 0; }
