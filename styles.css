@@ -13,7 +13,7 @@ a { color: inherit; text-decoration: none; }
 
 /* ROOT VARIABLES */
 :root{
-  /* Professor palette */
+  /* provided palette */
   --teal: #4CA7C0;
   --purple: #484FB7;
   --lavender: #6B8FE7;
@@ -39,7 +39,7 @@ a { color: inherit; text-decoration: none; }
   --font-heading: "Kavoon", system-ui;
   --font-body: "Inter", system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
 
-  /* Required sizes */
+  /* sizes */
   --fs-h1: 3em;        /* H1 */
   --fs-nav-h2: 1.5em;  /* NAV H2 */
   --fs-h2: 2em;        /* H2 */
@@ -55,7 +55,7 @@ body{
   background: var(--bg);
   color: var(--ink);
   font: var(--fs-base)/1.5 var(--font-body);
-  display: block; /* vertical stack */
+  display: block; 
 }
 
 /* centered 450px column */
@@ -84,7 +84,7 @@ header p{
   font-size: var(--fs-sm);
 }
 
-/* NAV (yellow bar + square white links, no outlines) */
+/* NAV */
 nav{
   background: var(--accent);
   padding: 14px 14px 18px;
@@ -93,7 +93,7 @@ nav{
 }
 .menu-title{
   text-align: center;
-  font-family: var(--font-body);  /* italic Inter */
+  font-family: var(--font-body);  
   font-style: italic;
   font-size: var(--fs-nav-h2);
   font-weight: 500;
@@ -106,14 +106,14 @@ nav a{
   display: block;
   text-align: center;
   background: var(--white);
-  border: none;               /* no outline */
-  border-radius: 0;           /* square */
+  border: none;               
+  border-radius: 0;           
   box-shadow: none;
   padding: 12px 14px;
   font-weight: 900;
-  font-size: 1rem;            /* larger */
-  color: #173a87;             /* dark blue */
-  text-transform: uppercase;  /* ALL CAPS */
+  font-size: 1rem;            
+  color: #173a87;             
+  text-transform: uppercase;  
   letter-spacing: .3px;
 }
 
@@ -125,12 +125,12 @@ section{
 }
 section + section{ margin-top: 14px; }
 
-/* yellow subheads (e.g., One-on-One Coaching) */
+/* One-on-One Coaching) */
 #services > article > h3,
 #pricing > article > h3,
 #services h3{ color: var(--yellow); font-weight: 900; }
 
-/* SERVICES (icon above text, left-aligned) */
+/* SERVICES */
 #services article{ margin-bottom: 14px; }
 #services > article > h3{ margin-top: 4px; }
 #services article article{
@@ -140,7 +140,7 @@ section + section{ margin-top: 14px; }
   box-shadow: var(--shadow);
   padding: 16px;
   display: grid;
-  grid-template-columns: 1fr; /* stack */
+  grid-template-columns: 1fr; 
   align-items: start;
 }
 #services article article + article{ margin-top: 12px; }
@@ -148,16 +148,16 @@ section + section{ margin-top: 14px; }
 #services h4{ color: #173a87; }
 #services p{ margin: 4px 0 0; color: var(--ink-subtle); font-size: var(--fs-sm); }
 
-/* WHY CHOOSE US (PINK band; tiles centered; white heading; attached) */
+/* WHY CHOOSE US */
 #why-choose-us{
   background: var(--pink);
   color: var(--dark);
-  border-radius: 0;       /* square like mock */
+  border-radius: 0;       
   padding: 12px;
-  margin-top: 0;          /* attach to section above */
-  margin-bottom: 0;       /* attach to section below */
+  margin-top: 0;          
+  margin-bottom: 0;       
 }
-#why-choose-us h2{ color: var(--white); } /* heading should be white */
+#why-choose-us h2{ color: var(--white); } 
 
 #why-choose-us .benefits{
   display: grid;
@@ -181,20 +181,20 @@ section + section{ margin-top: 14px; }
 #why-choose-us .benefit:nth-child(2){ background: var(--lavender); }
 #why-choose-us .benefit:nth-child(3){ background: var(--yellow); }
 #why-choose-us .benefit:nth-child(4){
-  background: var(--white); /* white tile */
-  border: none;             /* NO border */
+  background: var(--white); 
+  border: none;             
   box-shadow: none;
 }
 
-/* PRICING TABLES (yellow header, white cells, ALL CAPS, square) */
-#pricing{ margin-top: 0; } /* attach below Why Choose Us */
+/* PRICING TABLES */
+#pricing{ margin-top: 0; } 
 #pricing article{ margin-bottom: 16px; }
 #pricing h3{ color: var(--yellow); }
 #pricing table{
   border-collapse: separate;
   border-spacing: 0;
   background: transparent;
-  border-radius: 0;      /* square */
+  border-radius: 0;      
   box-shadow: none;
 }
 #pricing thead th{
@@ -222,11 +222,11 @@ section + section{ margin-top: 14px; }
 #pricing tbody tr:first-child td{ border-top: 2px solid var(--yellow); }
 #pricing tbody td:last-child{ border-right: 2px solid var(--yellow); }
 
-/* CTA (pink) ATTACHED — no inner light panel, square edges) */
+/* CTA */
 #contact{
   background: var(--pink);
   color: var(--white);
-  border-radius: 0;         /* square; attaches to footer */
+  border-radius: 0;         
   padding: 16px 12px 18px;
   margin-top: 0;
   margin-bottom: 0;
@@ -234,7 +234,7 @@ section + section{ margin-top: 14px; }
 #contact h2{ color: var(--white); }
 #contact p{
   margin: 10px 0 14px;
-  color: var(--white);      /* no lighter pink bubble */
+  color: var(--white);      
   background: transparent;
 }
 .button{
@@ -250,11 +250,11 @@ section + section{ margin-top: 14px; }
   box-shadow: 0 3px 0 rgba(0,0,0,.35);
 }
 
-/* FOOTER (purple, inline copyright + terms, attached, square) */
+/* FOOTER */
 footer{
   width: 100%;
   max-width: 450px;
-  margin: 0 auto 30px;   /* attached to CTA above; 30px breathing room below page */
+  margin: 0 auto 30px;   
   background: var(--panel);
   color: var(--white);
   padding: 12px;
@@ -262,12 +262,12 @@ footer{
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border-radius: 0;      /* square bottom */
+  border-radius: 0;      
   box-shadow: none;
 }
 footer p{ margin: 0; }
 footer a{ color: var(--white); text-decoration: underline; }
 
-/* helpers */
+/* beep boop */
 h2 + h3{ margin-top: -2px; }
 #services > h2{ margin-top: 6px; }
