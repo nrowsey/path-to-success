@@ -26,8 +26,8 @@ a { color: inherit; text-decoration: none; }
   --bg: var(--lavender);      /* page strip */
   --panel: var(--purple);     /* section panels */
   --accent: var(--yellow);    /* menu/table header */
-  --cta: var(--pink);         /* CTA & Why band */
-  --card: var(--white);       /* cards */
+  --cta: var(--pink);         /* CTA */
+  --card: var(--white);
   --ink: var(--dark);
   --ink-subtle: #444;
 
@@ -40,11 +40,11 @@ a { color: inherit; text-decoration: none; }
   --font-body: "Inter", system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
 
   /* Required sizes */
-  --fs-h1: 3em;     /* H1 */
-  --fs-nav-h2: 1.5em;/* Nav H2 */
-  --fs-h2: 2em;     /* H2 */
-  --fs-h3: 1.5em;   /* H3 */
-  --fs-h4: 1.15em;  /* H4 */
+  --fs-h1: 3em;       /* H1 */
+  --fs-nav-h2: 1.5em; /* Nav H2 */
+  --fs-h2: 2em;       /* H2 */
+  --fs-h3: 1.5em;     /* H3 */
+  --fs-h4: 1.15em;    /* H4 */
   --fs-base: 16px;
   --fs-sm: 13px;
   --fs-xs: 12px;
@@ -65,7 +65,7 @@ header, main, footer{
   margin-inline: auto;
 }
 
-/* ---- Typography defaults ---- */
+/* ---- Typographic defaults ---- */
 h1{ font-family: var(--font-heading); font-size: var(--fs-h1); line-height: 1.1; margin: 0 0 6px; }
 h2{ font-family: var(--font-heading); font-size: var(--fs-h2); line-height: 1.2; margin: 6px 0 2px; }
 h3{ font-family: var(--font-body);   font-size: var(--fs-h3); font-weight: 800; margin: 0 0 10px; }
@@ -84,21 +84,22 @@ header p{
   font-size: var(--fs-sm);
 }
 
-/* ---- Nav (yellow box + white buttons) ---- */
+/* ---- Nav (yellow bar + square white links, no borders) ---- */
 nav{
   background: var(--accent);
   padding: 14px 14px 18px;
   border-radius: 4px;
   margin-top: 16px;
 }
+/* Real H2: italic Inter (not Kavoon) */
 .menu-title{
   text-align: center;
-  font-family: var(--font-heading);
-  font-size: var(--fs-nav-h2);  /* 1.5em per spec */
-  font-weight: 400;
-  color: #2a2626;
+  font-family: var(--font-body);
+  font-style: italic;
+  font-size: var(--fs-nav-h2); /* 1.5em */
+  font-weight: 500;
+  color: var(--dark);
   margin: 0 0 10px;
-  font-style: normal;           /* keep clean like mock */
 }
 nav ul{ list-style: none; padding: 0; }
 nav li + li{ margin-top: 10px; }
@@ -106,17 +107,19 @@ nav a{
   display: block;
   text-align: center;
   background: var(--white);
-  border: 2px solid var(--panel);
-  border-radius: 4px;
-  padding: 10px 14px;
+  /* no outline / no rounding */
+  border: none;
+  border-radius: 0;
+  box-shadow: none;
+  padding: 12px 14px;
   font-weight: 900;
-  font-size: var(--fs-xs);
-  box-shadow: var(--shadow);
-  color: var(--dark);           /* visible text on white */
-  letter-spacing: .2px;
+  font-size: 1rem;                 /* larger */
+  color: #173a87;                  /* dark blue */
+  text-transform: uppercase;       /* ALL CAPS */
+  letter-spacing: .3px;
 }
 
-/* ---- Section panels ---- */
+/* ---- General section panel ---- */
 section{
   background: var(--panel);
   color: var(--white);
@@ -124,14 +127,15 @@ section{
 }
 section + section{ margin-top: 14px; }
 
-/* Yellow subheads like mock (“One-on-One Coaching”, etc.) */
+/* Yellow subheads (“One-on-One Coaching”, etc.) */
 #services > article > h3,
 #pricing > article > h3,
 #services h3{ color: var(--yellow); font-weight: 900; }
 
-/* ---- Service cards (icon + text) ---- */
+/* ---- Services cards (icon ABOVE text, left-aligned) ---- */
 #services article{ margin-bottom: 14px; }
 #services > article > h3{ margin-top: 4px; }
+
 #services article article{
   background: var(--card);
   color: var(--ink);
@@ -139,17 +143,21 @@ section + section{ margin-top: 14px; }
   box-shadow: var(--shadow);
   padding: 16px;
   display: grid;
-  grid-template-columns: 64px 1fr;
-  gap: 14px;
+  grid-template-columns: 1fr;  /* stack */
+  align-items: start;
 }
 #services article article + article{ margin-top: 12px; }
-#services img{ width: 56px; height: 56px; margin-top: 4px; }
-#services h4{ color: #173a87; }
-#services p{ margin: 0; color: var(--ink-subtle); font-size: var(--fs-sm); }
 
-/* ---- Why Choose Us (coral band + tiles, black text) ---- */
+#services img{
+  width: 64px; height: 64px;
+  margin: 0 0 10px 0;          /* space under icon */
+}
+#services h4{ color: #173a87; } /* dark blue titles */
+#services p{ margin: 4px 0 0; color: var(--ink-subtle); font-size: var(--fs-sm); }
+
+/* ---- Why Choose Us (WHITE band) ---- */
 #why-choose-us{
-  background: var(--cta);        /* coral */
+  background: var(--white);     /* white per request */
   color: var(--dark);
   padding-bottom: 12px;
   border-radius: var(--round);
@@ -164,58 +172,62 @@ section + section{ margin-top: 14px; }
 .benefit{
   border-radius: var(--radius-sm);
   padding: 16px;
+  display: flex;                /* perfectly center text */
+  align-items: center;
+  justify-content: center;
   text-align: center;
-  font-weight: 800;
+  font-weight: 900;
   box-shadow: var(--shadow);
-  color: var(--dark);            /* ensure black text */
-  line-height: 1.25;
-  background: var(--white);      /* default white tile */
+  color: var(--dark);
+  line-height: 1.2;
+  background: var(--white);     /* default */
 }
-/* colored tiles like mock */
+/* colored tiles */
 .benefit:nth-child(1){ background: var(--teal);    }
 .benefit:nth-child(2){ background: var(--lavender);}
 .benefit:nth-child(3){ background: var(--yellow);  }
 .benefit:nth-child(4){ background: var(--white);   }
 
-/* ---- Pricing tables ---- */
+/* ---- Pricing tables (YELLOW header, WHITE cells, ALL CAPS headers) ---- */
 #pricing article{ margin-bottom: 16px; }
 #pricing h3{ color: var(--yellow); }
 #pricing table{
-  background: #fff3d1;
+  background: transparent;
   overflow: hidden;
   border-radius: var(--radius-sm);
   box-shadow: var(--shadow);
 }
 #pricing thead th{
-  background: var(--accent);
+  background: var(--accent);        /* yellow header */
   color: var(--dark);
   font-size: var(--fs-xs);
-  padding: 10px 8px;
+  padding: 12px 10px;
   text-align: left;
-  letter-spacing: .2px;
+  text-transform: uppercase;        /* ALL CAPS */
+  letter-spacing: .4px;
 }
 #pricing tbody td{
-  padding: 10px 8px;
+  background: var(--white);         /* white cells */
+  padding: 12px 10px;
   border-top: 1px solid rgba(0,0,0,.08);
-  font-size: 13px;
+  font-size: 14px;
   color: var(--dark);
 }
+#pricing tbody td + td{ border-left: 1px solid rgba(0,0,0,.08); }
 
-/* ---- CTA (“Take the First Step Today”) ---- */
+/* ---- CTA (“Take the First Step Today”) ATTACHED, no inner light panel ---- */
 #contact{
-  background: var(--cta);        /* coral */
+  background: var(--pink);          /* coral */
   color: var(--white);
-  border-radius: var(--round);   /* all corners rounded */
+  border-radius: 0;                 /* attach cleanly */
   padding: 16px 12px 18px;
+  margin-top: 0;                    /* flush with previous section */
 }
 #contact h2{ color: var(--white); }
 #contact p{
-  background: #ffe6eb;           /* soft pink bubble */
-  color: var(--ink);
-  border-radius: var(--radius-sm);
-  padding: 14px;
   margin: 10px 0 14px;
-  font-size: var(--fs-sm);
+  color: var(--white);              /* no lighter pink bubble */
+  background: transparent;
 }
 .button{
   display: inline-block;
@@ -224,27 +236,28 @@ section + section{ margin-top: 14px; }
   background: var(--white);
   color: var(--dark);
   border: 2px solid var(--dark);
-  border-radius: var(--radius-sm);
+  border-radius: 10px;
   padding: 12px 16px;
   font-weight: 900;
-  /* mock-like “lifted” button */
   box-shadow: 0 3px 0 rgba(0,0,0,.35);
 }
 
-/* ---- Footer (purple panel) ---- */
+/* ---- Footer (purple, INLINE items, attached) ---- */
 footer{
   width: 100%;
   max-width: 450px;
-  margin: 10px auto 30px;
+  margin: 0 auto 30px;              /* attach to CTA above */
   background: var(--panel);
   color: var(--white);
-  text-align: center;
-  padding: 14px 12px 22px;
-  border-radius: 0 0 var(--round) var(--round);
+  padding: 12px;
   font-size: var(--fs-sm);
+  display: flex;                    /* inline copyright + terms */
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 0 0 var(--round) var(--round);
 }
-footer p{ margin: 0 0 8px; }
-footer a{ color: var(--white); text-decoration: underline; opacity: .95; }
+footer p{ margin: 0; }
+footer a{ color: var(--white); text-decoration: underline; }
 
 /* ---- Small helpers ---- */
 h2 + h3{ margin-top: -2px; }

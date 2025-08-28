@@ -1,264 +1,187 @@
-/* CSS BY Natalia Rowsey */
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Path to Success - Life Coaching</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- HEADER -->
+  <header>
+    <h1>Path to Success</h1>
+    <p>Unlock your full potential with personalized life coaching</p>
+    <!-- Navigation -->
+    <nav>
+      <ul>
+        <li><a href="#services">Our Services</a></li>
+        <li><a href="#why-choose-us">Why Choose Us</a></li>
+        <li><a href="#pricing">Prices</a></li>
+        <li><a href="#contact">Take the First Step</a></li>
+      </ul>
+    </nav>
+  </header>
 
-/* IMPORTED FONTS */
-@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Kavoon&display=swap');
+  <!-- MAIN CONTENT -->
+  <main>
+    <!-- Services Section -->
+    <section id="services">
+      <h2>Our Services</h2>
 
-/* CSS RESET */
-* { box-sizing: border-box; }
-html, body { margin: 0; padding: 0; }
-img { max-width: 100%; height: auto; display: block; }
-ul, ol { margin: 0; padding-left: 1.25rem; }
-table { border-collapse: collapse; width: 100%; }
-a { color: inherit; text-decoration: none; }
+      <!-- One-on-One Coaching -->
+      <article>
+        <h3>One-on-One Coaching</h3>
 
-/* ROOT VARIABLES */
-:root{
-  /* Professor palette */
-  --teal: #4CA7C0;
-  --purple: #484FB7;
-  --lavender: #6B8FE7;
-  --yellow: #E9BB57;
-  --pink: #D9526F;
-  --dark: #1E1E1E;
-  --white: #FFFFFF;
+        <article>
+          <img src="smile-icon.png" alt="teal icon of a smiling face">
+          <h4>Personal Development</h4>
+          <p>Identify and overcome obstacles holding you back from living your best life. Whether it's building confidence, breaking bad habits, or discovering your true purpose, we'll work together to create a clear roadmap for success.</p>
+        </article>
 
-  /* App tokens */
-  --bg: var(--lavender);      /* page strip */
-  --panel: var(--purple);     /* section panels */
-  --accent: var(--yellow);    /* menu/table header */
-  --cta: var(--pink);         /* CTA */
-  --card: var(--white);
-  --ink: var(--dark);
-  --ink-subtle: #444;
+        <article>
+          <img src="briefcase-icon.png" alt="lavender icon of a briefcase">
+          <h4>Career Coaching</h4>
+          <p>Feeling stuck in your career? We'll help you clarify your goals, develop a plan for advancement, and build the skills needed to thrive in your professional life.</p>
+        </article>
 
-  --round: 16px;
-  --radius-sm: 12px;
-  --shadow: 0 4px 10px rgba(0,0,0,.08);
+        <article>
+          <img src="heart-icon.png" alt="pink icon of a heart">
+          <h4>Relationship Coaching</h4>
+          <p>Enhance your relationships with better communication, understanding, and empathy. Whether it's family, friends, or partners, we'll help you build stronger connections.</p>
+        </article>
+      </article>
 
-  /* Typography */
-  --font-heading: "Kavoon", system-ui;
-  --font-body: "Inter", system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+      <!-- Group Coaching -->
+      <article>
+        <h3>Group Coaching</h3>
 
-  /* Required sizes */
-  --fs-h1: 3em;       /* H1 */
-  --fs-nav-h2: 1.5em; /* Nav H2 */
-  --fs-h2: 2em;       /* H2 */
-  --fs-h3: 1.5em;     /* H3 */
-  --fs-h4: 1.15em;    /* H4 */
-  --fs-base: 16px;
-  --fs-sm: 13px;
-  --fs-xs: 12px;
-}
+        <article>
+          <img src="hands-icon.png" alt="yellow icon of hands clasping">
+          <h4>Supportive Community</h4>
+          <p>Join a group of like-minded individuals on a similar journey. Share experiences, gain insights, and grow together in a safe, supportive environment.</p>
+        </article>
 
-/* GLOBAL STYLES (mobile first/small) */
-body{
-  background: var(--bg);
-  color: var(--ink);
-  font: var(--fs-base)/1.5 var(--font-body);
-  display: block; /* keep header → main → footer stacked */
-}
+        <article>
+          <img src="clock-icon.png" alt="teal icon of a clock face">
+          <h4>Focused Sessions</h4>
+          <p>Our group coaching sessions focus on specific themes such as confidence-building, time management, or work-life balance. Each session is designed to provide actionable takeaways that you can apply immediately.</p>
+        </article>
+      </article>
 
-/* Centered 450px column */
-header, main, footer{
-  width: 100%;
-  max-width: 450px;
-  margin-inline: auto;
-}
+      <!-- Workshops & Seminars -->
+      <article>
+        <h3>Workshops & Seminars</h3>
+        <article>
+          <img src="chat-icon.png" alt="lavender icon of text conversation">
+          <h4>Interactive Learning</h4>
+          <p>Participate in our interactive workshops and seminars that cover a range of topics, from goal setting to stress management. These events are designed to provide practical tools and strategies that you can implement in your daily life.</p>
+        </article>
+      </article>
 
-/* ---- Typographic defaults ---- */
-h1{ font-family: var(--font-heading); font-size: var(--fs-h1); line-height: 1.1; margin: 0 0 6px; }
-h2{ font-family: var(--font-heading); font-size: var(--fs-h2); line-height: 1.2; margin: 6px 0 2px; }
-h3{ font-family: var(--font-body);   font-size: var(--fs-h3); font-weight: 800; margin: 0 0 10px; }
-h4{ font-family: var(--font-body);   font-size: var(--fs-h4); font-weight: 800; margin: 0 0 6px; }
+      <!-- Online Courses -->
+      <article>
+        <h3>Online Courses</h3>
+        <article>
+          <img src="arrow-icon.png" alt="pink icon of a curly arrow">
+          <h4>Flexible Learning</h4>
+          <p>Access our online courses at your convenience. With video lessons, downloadable resources, and exercises, you can learn at your own pace from the comfort of your home.</p>
+        </article>
+      </article>
+    </section>
 
-/* ---- Header ---- */
-header{
-  background: var(--panel);
-  color: var(--white);
-  padding: 28px 22px 12px;
-}
-header p{
-  margin: 0;
-  font-style: italic;
-  opacity: .9;
-  font-size: var(--fs-sm);
-}
+    <!-- Why Choose Us -->
+    <section id="why-choose-us">
+      <h2>Why Choose Us</h2>
+      <ul>
+        <li>Personalized Approach</li>
+        <li>Proven Results</li>
+        <li>Supportive Environment</li>
+        <li>Flexible Options</li>
+      </ul>
+    </section>
 
-/* ---- Nav (yellow bar + square white links, no borders) ---- */
-nav{
-  background: var(--accent);
-  padding: 14px 14px 18px;
-  border-radius: 4px;
-  margin-top: 16px;
-}
-/* Real H2: italic Inter (not Kavoon) */
-.menu-title{
-  text-align: center;
-  font-family: var(--font-body);
-  font-style: italic;
-  font-size: var(--fs-nav-h2); /* 1.5em */
-  font-weight: 500;
-  color: var(--dark);
-  margin: 0 0 10px;
-}
-nav ul{ list-style: none; padding: 0; }
-nav li + li{ margin-top: 10px; }
-nav a{
-  display: block;
-  text-align: center;
-  background: var(--white);
-  /* no outline / no rounding */
-  border: none;
-  border-radius: 0;
-  box-shadow: none;
-  padding: 12px 14px;
-  font-weight: 900;
-  font-size: 1rem;                 /* larger */
-  color: #173a87;                  /* dark blue */
-  text-transform: uppercase;       /* ALL CAPS */
-  letter-spacing: .3px;
-}
+    <!-- Pricing Section -->
+    <section id="pricing">
+      <h2>Pricing</h2>
 
-/* ---- General section panel ---- */
-section{
-  background: var(--panel);
-  color: var(--white);
-  padding: 10px 12px 16px;
-}
-section + section{ margin-top: 14px; }
+      <article>
+        <h3>One-on-One Coaching</h3>
+        <table>
+          <thead>
+            <tr>
+              <th>Service</th>
+              <th>Cost</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>Single Session</td><td>$150</td></tr>
+            <tr><td>Monthly Package</td><td>$550</td></tr>
+            <tr><td>3-month Package</td><td>$1500</td></tr>
+          </tbody>
+        </table>
+      </article>
 
-/* Yellow subheads (“One-on-One Coaching”, etc.) */
-#services > article > h3,
-#pricing > article > h3,
-#services h3{ color: var(--yellow); font-weight: 900; }
+      <article>
+        <h3>Group Coaching</h3>
+        <table>
+          <thead>
+            <tr>
+              <th>Service</th>
+              <th>Cost</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>Single Session</td><td>$75</td></tr>
+            <tr><td>Monthly Package</td><td>$250</td></tr>
+          </tbody>
+        </table>
+      </article>
 
-/* ---- Services cards (icon ABOVE text, left-aligned) ---- */
-#services article{ margin-bottom: 14px; }
-#services > article > h3{ margin-top: 4px; }
+      <article>
+        <h3>Workshops & Seminars</h3>
+        <table>
+          <thead>
+            <tr>
+              <th>Service</th>
+              <th>Cost</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>Single Workshop</td><td>$150</td></tr>
+            <tr><td>Seminar Series</td><td>$250</td></tr>
+          </tbody>
+        </table>
+      </article>
 
-#services article article{
-  background: var(--card);
-  color: var(--ink);
-  border-radius: var(--round);
-  box-shadow: var(--shadow);
-  padding: 16px;
-  display: grid;
-  grid-template-columns: 1fr;  /* stack */
-  align-items: start;
-}
-#services article article + article{ margin-top: 12px; }
+      <article>
+        <h3>Online Courses</h3>
+        <table>
+          <thead>
+            <tr>
+              <th>Service</th>
+              <th>Cost</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>Single Workshop</td><td>$150</td></tr>
+            <tr><td>Webinar Series</td><td>$250</td></tr>
+          </tbody>
+        </table>
+      </article>
+    </section>
 
-#services img{
-  width: 64px; height: 64px;
-  margin: 0 0 10px 0;          /* space under icon */
-}
-#services h4{ color: #173a87; } /* dark blue titles */
-#services p{ margin: 4px 0 0; color: var(--ink-subtle); font-size: var(--fs-sm); }
+    <!-- Call to Action -->
+    <section id="contact">
+      <h2>Take the First Step Today</h2>
+      <p>Your journey to a more fulfilling life begins with a single step. Book a free 30-minute consultation today to discover how our coaching services can help you achieve your goals. Let's work together to create the life you've always dreamed of!</p>
+      <a href="schedule.html" class="button">Schedule Now</a>
+    </section>
+  </main>
 
-/* ---- Why Choose Us (WHITE band) ---- */
-#why-choose-us{
-  background: var(--white);     /* white per request */
-  color: var(--dark);
-  padding-bottom: 12px;
-  border-radius: var(--round);
-}
-#why-choose-us h2{ color: var(--dark); }
-.benefits{
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 14px;
-  padding-top: 6px;
-}
-.benefit{
-  border-radius: var(--radius-sm);
-  padding: 16px;
-  display: flex;                /* perfectly center text */
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  font-weight: 900;
-  box-shadow: var(--shadow);
-  color: var(--dark);
-  line-height: 1.2;
-  background: var(--white);     /* default */
-}
-/* colored tiles */
-.benefit:nth-child(1){ background: var(--teal);    }
-.benefit:nth-child(2){ background: var(--lavender);}
-.benefit:nth-child(3){ background: var(--yellow);  }
-.benefit:nth-child(4){ background: var(--white);   }
-
-/* ---- Pricing tables (YELLOW header, WHITE cells, ALL CAPS headers) ---- */
-#pricing article{ margin-bottom: 16px; }
-#pricing h3{ color: var(--yellow); }
-#pricing table{
-  background: transparent;
-  overflow: hidden;
-  border-radius: var(--radius-sm);
-  box-shadow: var(--shadow);
-}
-#pricing thead th{
-  background: var(--accent);        /* yellow header */
-  color: var(--dark);
-  font-size: var(--fs-xs);
-  padding: 12px 10px;
-  text-align: left;
-  text-transform: uppercase;        /* ALL CAPS */
-  letter-spacing: .4px;
-}
-#pricing tbody td{
-  background: var(--white);         /* white cells */
-  padding: 12px 10px;
-  border-top: 1px solid rgba(0,0,0,.08);
-  font-size: 14px;
-  color: var(--dark);
-}
-#pricing tbody td + td{ border-left: 1px solid rgba(0,0,0,.08); }
-
-/* ---- CTA (“Take the First Step Today”) ATTACHED, no inner light panel ---- */
-#contact{
-  background: var(--pink);          /* coral */
-  color: var(--white);
-  border-radius: 0;                 /* attach cleanly */
-  padding: 16px 12px 18px;
-  margin-top: 0;                    /* flush with previous section */
-}
-#contact h2{ color: var(--white); }
-#contact p{
-  margin: 10px 0 14px;
-  color: var(--white);              /* no lighter pink bubble */
-  background: transparent;
-}
-.button{
-  display: inline-block;
-  width: 100%;
-  text-align: center;
-  background: var(--white);
-  color: var(--dark);
-  border: 2px solid var(--dark);
-  border-radius: 10px;
-  padding: 12px 16px;
-  font-weight: 900;
-  box-shadow: 0 3px 0 rgba(0,0,0,.35);
-}
-
-/* ---- Footer (purple, INLINE items, attached) ---- */
-footer{
-  width: 100%;
-  max-width: 450px;
-  margin: 0 auto 30px;              /* attach to CTA above */
-  background: var(--panel);
-  color: var(--white);
-  padding: 12px;
-  font-size: var(--fs-sm);
-  display: flex;                    /* inline copyright + terms */
-  justify-content: space-between;
-  align-items: center;
-  border-radius: 0 0 var(--round) var(--round);
-}
-footer p{ margin: 0; }
-footer a{ color: var(--white); text-decoration: underline; }
-
-/* ---- Small helpers ---- */
-h2 + h3{ margin-top: -2px; }
-#services > h2{ margin-top: 6px; }
+  <!-- FOOTER -->
+  <footer>
+    <p>&copy; 2024 Path to Success</p>
+    <a href="terms.html">Terms and Conditions</a>
+  </footer>
+</body>
+</html>
