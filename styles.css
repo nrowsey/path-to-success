@@ -1,7 +1,7 @@
 /* CSS BY Natalia Rowsey */
 
 /* IMPORTED FONTS */
-@import url("https://fonts.googleapis.com/css2?family=Bree+Serif:wght@400..800&family=Inter:wght@400;600;800;900&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Kavoon&display=swap');
 
 /* CSS RESET */
 * { box-sizing: border-box; }
@@ -13,23 +13,37 @@ a { color: inherit; text-decoration: none; }
 
 /* ROOT VARIABLES */
 :root{
-  --bg: #6b86d6;       /* page background (lavender/blue) */
-  --panel: #3f3a8a;    /* deep purple panels */
-  --accent: #eab84e;   /* gold */
-  --cta: #e96569;      /* coral CTA */
-  --card: #ffffff;     /* white cards */
-  --ink: #1b1b1b;      /* dark text */
-  --ink-subtle: #454545;
+  /* professor palette */
+  --teal: #4CA7C0;
+  --purple: #484FB7;
+  --lavender: #6B8FE7;
+  --yellow: #E9BB57;
+  --pink: #D9526F;
+  --dark: #1E1E1E;
+  --white: #FFFFFF;
+
+  /* app tokens */
+  --bg: var(--lavender);     /* page strip bg */
+  --panel: var(--purple);    /* section panel */
+  --accent: var(--yellow);   /* gold menu/table head */
+  --cta: var(--pink);        /* CTA bar */
+  --card: var(--white);      /* white cards */
+  --ink: var(--dark);
+  --ink-subtle: #444;
 
   --round: 14px;
   --radius-sm: 8px;
   --shadow: 0 4px 10px rgba(0,0,0,.08);
 
-  --font-heading: "Bree Serif", serif;
-  --font-body: "Inter", system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
-  --fs-xxl: 34px;
-  --fs-xl: 22px;
-  --fs-lg: 16px;
+  --font-heading: "Kavoon", system-ui;
+  --font-body: "Inter", system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+
+  /* professor type sizes */
+  --fs-h1: 3em;
+  --fs-nav-h2: 1.5em;
+  --fs-h2: 2em;
+  --fs-h3: 1.5em;
+  --fs-h4: 1.15em;
   --fs-base: 16px;
   --fs-sm: 13px;
   --fs-xs: 12px;
@@ -37,90 +51,108 @@ a { color: inherit; text-decoration: none; }
 
 /* GLOBAL STYLES (mobile first/small) */
 body{
-  background: var(--bg);                 /* full-page strip */
+  background: var(--bg);
   color: var(--ink);
   font: var(--fs-base)/1.5 var(--font-body);
-  display: block;                        /* <-- force vertical stack */
+  display: block; /* keep header/main/footer stacked */
 }
 
-/* Center the 450px column */
+/* centered 450px column */
 header, main, footer{
   width: 100%;
-  max-width: 450px;                      /* requirement */
+  max-width: 450px;
   margin-inline: auto;
 }
 
 /* ----- Header ----- */
 header{
   background: var(--panel);
-  color: #fff;
+  color: var(--white);
   padding: 28px 22px 12px;
 }
 header h1{
   font-family: var(--font-heading);
-  margin: 0;
-  font-size: var(--fs-xxl);
+  font-size: var(--fs-h1);   /* 3em per spec */
   line-height: 1.1;
+  margin: 0 0 6px 0;
 }
 header p{
-  margin: 6px 0 0;
+  margin: 0;
   font-style: italic;
   opacity: .9;
   font-size: var(--fs-sm);
 }
 
-/* ----- Menu (gold box + white buttons) ----- */
-header nav{
-  background: var(--accent);
-  padding: 14px 14px 18px;
-  border-radius: 4px;
-  margin: 16px 0 0;
+/* ----- Nav (gold box + white buttons) ----- */
+/* NAV H2 (visible now, replaces ::before) */
+.menu-title{
+  text-align: center;
+  font-family: "Kavoon", system-ui; /* H2 = Kavoon */
+  font-size: 1.5em;                 /* per spec */
+  font-weight: 400;
+  color: #2a2626;
+  margin: 0 0 10px;
+  font-style: italic;
 }
+
+/* You used ::before for “MENU”; style it as the required NAV H2 */
 header nav::before{
   content: "MENU";
   display: block;
   text-align: center;
-  font-weight: 800;
-  font-style: italic;
+  font-family: var(--font-heading);      /* H2 must use Kavoon */
+  font-size: var(--fs-nav-h2);           /* 1.5em per spec */
+  font-weight: 400;
   color: #2a2626;
   margin-bottom: 10px;
+  font-style: italic;
 }
 header nav ul{ list-style: none; padding: 0; }
 header nav li + li{ margin-top: 10px; }
 header nav a{
   display: block;
   text-align: center;
-  background: #fff;
+  background: var(--white);
   border: 2px solid var(--panel);
   border-radius: 4px;
   padding: 10px 14px;
   font-weight: 900;
   font-size: var(--fs-xs);
   box-shadow: var(--shadow);
-  color: #1b1b1b;                        /* <-- make button text visible */
+  color: var(--dark); /* visible text on white */
 }
 
-/* ----- Section chrome ----- */
+/* ----- Sections ----- */
 section{
   background: var(--panel);
-  color: #fff;
+  color: var(--white);
   padding: 10px 12px 16px;
 }
 section + section{ margin-top: 14px; }
+
+/* H2, H3, H4 sizes & families per spec */
 section h2{
+  font-family: var(--font-heading);   /* Kavoon */
+  font-size: var(--fs-h2);            /* 2em */
+  line-height: 1.2;
   margin: 6px 0 2px;
-  font-family: var(--font-heading);
-  font-size: var(--fs-xl);
 }
 section h3{
-  margin: 0 0 10px;
-  color: #ffdda6;
-  font-size: var(--fs-lg);
+  font-family: var(--font-body);      /* Inter */
+  font-size: var(--fs-h3);            /* 1.5em */
   font-weight: 800;
-  font-family: var(--font-body);
+  color: #ffdda6;                     /* soft contrast subtitle */
+  margin: 0 0 10px;
+}
+section h4{
+  font-family: var(--font-body);      /* Inter */
+  font-size: var(--fs-h4);            /* 1.15em */
+  margin: 0 0 6px;
+  color: #173a87;                     /* navy-ish for card titles */
+  font-weight: 800;
 }
 
-/* ----- Service cards ----- */
+/* ----- Service cards (icon + text) ----- */
 #services article{ margin-bottom: 14px; }
 #services > article > h3{ margin-top: 4px; }
 
@@ -135,21 +167,8 @@ section h3{
   gap: 12px;
 }
 #services article article + article{ margin-top: 12px; }
-
-#services img{
-  width: 56px; height: 56px; margin-top: 4px;
-}
-#services h4{
-  margin: 0 0 6px;
-  font-size: 14px;
-  font-weight: 800;
-  color: #183a79;
-}
-#services p{
-  margin: 0;
-  color: var(--ink-subtle);
-  font-size: var(--fs-sm);
-}
+#services img{ width: 56px; height: 56px; margin-top: 4px; }
+#services p{ margin: 0; color: var(--ink-subtle); font-size: var(--fs-sm); }
 
 /* ----- Why Choose Us tiles ----- */
 #why-choose-us{ padding-bottom: 8px; }
@@ -164,13 +183,14 @@ section h3{
   text-align: center;
   font-weight: 800;
   box-shadow: var(--shadow);
+  font-family: var(--font-body);
 }
-.benefit:nth-child(1){ background:#51a8b5; color:#fff; }
-.benefit:nth-child(2){ background:#6c8ddf; color:#fff; }
-.benefit:nth-child(3){ background:#e8c15a; color:#1b1b1b; }
-.benefit:nth-child(4){ background:#ffffff; color:#1b1b1b; }
+.benefit:nth-child(1){ background: var(--teal);    color: var(--white); }
+.benefit:nth-child(2){ background: var(--lavender);color: var(--white); }
+.benefit:nth-child(3){ background: var(--yellow);  color: var(--dark);  }
+.benefit:nth-child(4){ background: var(--white);   color: var(--dark);  }
 
-/* ----- Pricing tables ----- */
+/* ----- Pricing ----- */
 #pricing article{ margin-bottom: 16px; }
 #pricing h3{ color:#ffdda6; }
 #pricing table{
@@ -181,7 +201,7 @@ section h3{
 }
 #pricing thead th{
   background: var(--accent);
-  color: #1f1a1a;
+  color: var(--dark);
   font-size: var(--fs-xs);
   padding: 10px 8px;
   text-align: left;
@@ -191,22 +211,24 @@ section h3{
   padding: 10px 8px;
   border-top: 1px solid rgba(0,0,0,.08);
   font-size: 13px;
+  color: var(--dark);
 }
 
 /* ----- CTA ----- */
 #contact{
   background: var(--cta);
-  color: #fff;
+  color: var(--white);
   border-bottom-left-radius: var(--round);
   border-bottom-right-radius: var(--round);
 }
 #contact h2{
-  color: #fff;
-  font-size: var(--fs-xl);
+  font-family: var(--font-heading);     /* Kavoon */
+  font-size: var(--fs-h2);              /* 2em */
+  color: var(--white);
   margin-top: 6px;
 }
 #contact p{
-  background: #fff3f3;
+  background: #ffe6eb;
   color: var(--ink);
   border-radius: var(--radius-sm);
   padding: 12px;
@@ -217,9 +239,9 @@ section h3{
   display: inline-block;
   width: 100%;
   text-align: center;
-  background: #fff;
-  color: #171717;
-  border: 2px solid #1c1c1c;
+  background: var(--white);
+  color: var(--dark);
+  border: 2px solid var(--dark);
   border-radius: var(--radius-sm);
   padding: 12px 16px;
   font-weight: 900;

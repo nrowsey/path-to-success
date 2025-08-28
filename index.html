@@ -10,8 +10,10 @@
   <header>
     <h1>Path to Success</h1>
     <p>Unlock your full potential with personalized life coaching</p>
-    <!-- Navigation -->
-    <nav>
+
+    <!-- MAIN NAV -->
+    <nav aria-labelledby="menu-title">
+      <h2 id="menu-title" class="menu-title">MENU</h2>
       <ul>
         <li><a href="#services">Our Services</a></li>
         <li><a href="#why-choose-us">Why Choose Us</a></li>
@@ -21,33 +23,168 @@
     </nav>
   </header>
 
-  <!-- MAIN CONTENT -->
+  <!-- MAIN -->
   <main>
-    <!-- Services -->
-    <section id="services">
-      <h2>Our Services</h2>
+    <!-- Our Services -->
+    <section id="services" aria-labelledby="services-title">
+      <h2 id="services-title">Our Services</h2>
 
       <!-- One-on-One Coaching -->
-      <article>
-        <h3>One-on-One Coaching</h3>
+      <article aria-labelledby="ooc-title">
+        <h3 id="ooc-title">One-on-One Coaching</h3>
 
-        <article>
-          <img src="smile-icon.png" alt="teal icon of a smiling face">
-          <h4>Personal Development</h4>
-          <p>Identify and overcome obstacles holding you back from living your best life. Whether it's building confidence, breaking bad habits, or discovering your true purpose, we'll work together to create a clear roadmap for success.</p>
+        <article aria-labelledby="pd-title">
+          <img src="icons/smile.svg" alt="teal icon of a smiling face">
+          <div>
+            <h4 id="pd-title">Personal Development</h4>
+            <p>Identify and overcome obstacles holding you back from living your best life. Whether it's building confidence, breaking bad habits, or discovering your true purpose, we'll work together to create a clear roadmap for success.</p>
+          </div>
         </article>
 
-        <article>
-          <img src="briefcase-icon.png" alt="lavender icon of a briefcase">
-          <h4>Career Coaching</h4>
-          <p>Feeling stuck in your career? We'll help you clarify your goals, develop a plan for advancement, and build the skills needed to thrive in your professional life.</p>
+        <article aria-labelledby="cc-title">
+          <img src="icons/briefcase.svg" alt="lavender icon of a briefcase">
+          <div>
+            <h4 id="cc-title">Career Coaching</h4>
+            <p>Feeling stuck in your career? We'll help you clarify your goals, develop a plan for advancement, and build the skills needed to thrive in your professional life.</p>
+          </div>
         </article>
 
-        <article>
-          <img src="heart-icon.png" alt="pink icon of a heart">
-          <h4>Relationship Coaching</h4>
-          <p>Enhance your relationships with better communication, understanding, and empathy. Whether it's family, friends, or partners, we'll help you build stronger connections.</p>
-        </article>  
-    </article>
+        <article aria-labelledby="rc-title">
+          <img src="icons/heart.svg" alt="pink icon of a heart">
+          <div>
+            <h4 id="rc-title">Relationship Coaching</h4>
+            <p>Enhance your relationships with better communication, understanding, and empathy. Whether it's family, friends, or partners, we'll help you build stronger connections.</p>
+          </div>
+        </article>
+      </article>
+
+      <!-- Group Coaching -->
+      <article aria-labelledby="gc-title">
+        <h3 id="gc-title">Group Coaching</h3>
+
+        <article aria-labelledby="sc-title">
+          <img src="icons/hands.svg" alt="yellow icon of hands clasping">
+          <div>
+            <h4 id="sc-title">Supportive Community</h4>
+            <p>Join a group of like-minded individuals on a similar journey. Share experiences, gain insights, and grow together in a safe, supportive environment.</p>
+          </div>
+        </article>
+
+        <article aria-labelledby="fs-title">
+          <img src="icons/clock.svg" alt="teal icon of a clock face">
+          <div>
+            <h4 id="fs-title">Focused Sessions</h4>
+            <p>Our group coaching sessions focus on specific themes such as confidence-building, time management, or work-life balance. Each session is designed to provide actionable takeaways that you can apply immediately.</p>
+          </div>
+        </article>
+      </article>
+
+      <!-- Workshops & Seminars -->
+      <article aria-labelledby="ws-title">
+        <h3 id="ws-title">Workshops &amp; Seminars</h3>
+        <article aria-labelledby="il-title">
+          <img src="icons/chat.svg" alt="lavender icon of text conversation">
+          <div>
+            <h4 id="il-title">Interactive Learning</h4>
+            <p>Participate in our interactive workshops and seminars that cover a range of topics, from goal setting to stress management. These events are designed to provide practical tools and strategies that you can implement in your daily life.</p>
+          </div>
+        </article>
+      </article>
+
+      <!-- Online Courses -->
+      <article aria-labelledby="oc-title">
+        <h3 id="oc-title">Online Courses</h3>
+        <article aria-labelledby="fl-title">
+          <img src="icons/arrow.svg" alt="pink icon of a curly arrow">
+          <div>
+            <h4 id="fl-title">Flexible Learning</h4>
+            <p>Access our online courses at your convenience. With video lessons, downloadable resources, and exercises, you can learn at your own pace from the comfort of your home.</p>
+          </div>
+        </article>
+      </article>
     </section>
-    </main>
+
+    <!-- Why Choose Us -->
+    <section id="why-choose-us" aria-labelledby="why-title">
+      <h2 id="why-title">Why Choose Us</h2>
+      <div class="benefits" role="list">
+        <div class="benefit" role="listitem">Personalized Approach</div>
+        <div class="benefit" role="listitem">Proven Results</div>
+        <div class="benefit" role="listitem">Supportive Environment</div>
+        <div class="benefit" role="listitem">Flexible Options</div>
+      </div>
+    </section>
+
+    <!-- Pricing -->
+    <section id="pricing" aria-labelledby="pricing-title">
+      <h2 id="pricing-title">Pricing</h2>
+
+      <article aria-labelledby="pricing-ooc">
+        <h3 id="pricing-ooc">One-on-One Coaching</h3>
+        <table>
+          <thead>
+            <tr><th scope="col">Service</th><th scope="col">Cost</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Single Session</td><td>$150</td></tr>
+            <tr><td>Monthly Package</td><td>$550</td></tr>
+            <tr><td>3-month Package</td><td>$1500</td></tr>
+          </tbody>
+        </table>
+      </article>
+
+      <article aria-labelledby="pricing-gc">
+        <h3 id="pricing-gc">Group Coaching</h3>
+        <table>
+          <thead>
+            <tr><th scope="col">Service</th><th scope="col">Cost</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Single Session</td><td>$75</td></tr>
+            <tr><td>Monthly Package</td><td>$250</td></tr>
+          </tbody>
+        </table>
+      </article>
+
+      <article aria-labelledby="pricing-ws">
+        <h3 id="pricing-ws">Workshops &amp; Seminars</h3>
+        <table>
+          <thead>
+            <tr><th scope="col">Service</th><th scope="col">Cost</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Single Workshop</td><td>$150</td></tr>
+            <tr><td>Seminar Series</td><td>$250</td></tr>
+          </tbody>
+        </table>
+      </article>
+
+      <article aria-labelledby="pricing-oc">
+        <h3 id="pricing-oc">Online Courses</h3>
+        <table>
+          <thead>
+            <tr><th scope="col">Service</th><th scope="col">Cost</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Single Workshop</td><td>$150</td></tr>
+            <tr><td>Webinar Series</td><td>$250</td></tr>
+          </tbody>
+        </table>
+      </article>
+    </section>
+
+    <!-- CTA -->
+    <section id="contact" aria-labelledby="contact-title">
+      <h2 id="contact-title">Take the First Step Today</h2>
+      <p>Your journey to a more fulfilling life begins with a single step. Book a free 30-minute consultation today to discover how our coaching services can help you achieve your goals. Let's work together to create the life you've always dreamed of!</p>
+      <a class="button" href="#schedule">Schedule Now</a>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>&copy; 2024 Path to Success</p>
+    <a href="terms.html">Terms and Conditions</a>
+  </footer>
+</body>
+</html>
