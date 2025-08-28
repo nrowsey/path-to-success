@@ -214,7 +214,7 @@ section + section{ margin-top: 14px; }
 #pricing tbody tr:first-child td{ border-top: 2px solid var(--yellow); }
 #pricing tbody td:last-child{ border-right: 2px solid var(--yellow); }
 
-/* CTA (pink) ATTACHED — no inner light panel, square edges) */
+/* CTA */
 #contact{
   background: var(--pink);
   color: var(--white);
@@ -226,7 +226,7 @@ section + section{ margin-top: 14px; }
 #contact h2{ color: var(--white); }
 #contact p{
   margin: 10px 0 14px;
-  color: var(--white);      /* no lighter pink bubble */
+  color: var(--white);      
   background: transparent;
 }
 .button{
@@ -263,18 +263,3 @@ footer a{ color: var(--white); text-decoration: underline; }
 /* helpers */
 h2 + h3{ margin-top: -2px; }
 #services > h2{ margin-top: 6px; }
-/* --- Why Choose Us fix --- */
-#why-choose-us{
-  background: var(--pink);   /* coral band */
-  margin-top: 0;             /* attach to section above */
-  margin-bottom: 0;          /* attach to section below */
-  border-radius: 0;          /* square edges */
-  padding: 12px;
-}
-
-/* --- Flexible Options tile: show the white BOX --- */
-#why-choose-us .benefit:nth-child(4){
-  background: var(--white);            /* white tile */
-  border: 2px solid var(--dark);       /* visible box outline */
-  border-radius: var(--radius-sm);     /* match other tiles */
-}
