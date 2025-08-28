@@ -13,7 +13,7 @@ a { color: inherit; text-decoration: none; }
 
 /* ROOT VARIABLES */
 :root{
-  /* professor palette */
+  /* Professor palette */
   --teal: #4CA7C0;
   --purple: #484FB7;
   --lavender: #6B8FE7;
@@ -22,28 +22,29 @@ a { color: inherit; text-decoration: none; }
   --dark: #1E1E1E;
   --white: #FFFFFF;
 
-  /* app tokens */
-  --bg: var(--lavender);     /* page strip bg */
-  --panel: var(--purple);    /* section panel */
-  --accent: var(--yellow);   /* gold menu/table head */
-  --cta: var(--pink);        /* CTA bar */
-  --card: var(--white);      /* white cards */
+  /* App tokens */
+  --bg: var(--lavender);      /* page strip */
+  --panel: var(--purple);     /* section panels */
+  --accent: var(--yellow);    /* menu/table header */
+  --cta: var(--pink);         /* CTA & Why band */
+  --card: var(--white);       /* cards */
   --ink: var(--dark);
   --ink-subtle: #444;
 
-  --round: 14px;
-  --radius-sm: 8px;
+  --round: 16px;
+  --radius-sm: 12px;
   --shadow: 0 4px 10px rgba(0,0,0,.08);
 
+  /* Typography */
   --font-heading: "Kavoon", system-ui;
   --font-body: "Inter", system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
 
-  /* professor type sizes */
-  --fs-h1: 3em;
-  --fs-nav-h2: 1.5em;
-  --fs-h2: 2em;
-  --fs-h3: 1.5em;
-  --fs-h4: 1.15em;
+  /* Required sizes */
+  --fs-h1: 3em;     /* H1 */
+  --fs-nav-h2: 1.5em;/* Nav H2 */
+  --fs-h2: 2em;     /* H2 */
+  --fs-h3: 1.5em;   /* H3 */
+  --fs-h4: 1.15em;  /* H4 */
   --fs-base: 16px;
   --fs-sm: 13px;
   --fs-xs: 12px;
@@ -54,27 +55,27 @@ body{
   background: var(--bg);
   color: var(--ink);
   font: var(--fs-base)/1.5 var(--font-body);
-  display: block; /* keep header/main/footer stacked */
+  display: block; /* keep header → main → footer stacked */
 }
 
-/* centered 450px column */
+/* Centered 450px column */
 header, main, footer{
   width: 100%;
   max-width: 450px;
   margin-inline: auto;
 }
 
-/* ----- Header ----- */
+/* ---- Typography defaults ---- */
+h1{ font-family: var(--font-heading); font-size: var(--fs-h1); line-height: 1.1; margin: 0 0 6px; }
+h2{ font-family: var(--font-heading); font-size: var(--fs-h2); line-height: 1.2; margin: 6px 0 2px; }
+h3{ font-family: var(--font-body);   font-size: var(--fs-h3); font-weight: 800; margin: 0 0 10px; }
+h4{ font-family: var(--font-body);   font-size: var(--fs-h4); font-weight: 800; margin: 0 0 6px; }
+
+/* ---- Header ---- */
 header{
   background: var(--panel);
   color: var(--white);
   padding: 28px 22px 12px;
-}
-header h1{
-  font-family: var(--font-heading);
-  font-size: var(--fs-h1);   /* 3em per spec */
-  line-height: 1.1;
-  margin: 0 0 6px 0;
 }
 header p{
   margin: 0;
@@ -83,33 +84,25 @@ header p{
   font-size: var(--fs-sm);
 }
 
-/* ----- Nav (gold box + white buttons) ----- */
-/* NAV H2 (visible now, replaces ::before) */
+/* ---- Nav (yellow box + white buttons) ---- */
+nav{
+  background: var(--accent);
+  padding: 14px 14px 18px;
+  border-radius: 4px;
+  margin-top: 16px;
+}
 .menu-title{
   text-align: center;
-  font-family: "Kavoon", system-ui; /* H2 = Kavoon */
-  font-size: 1.5em;                 /* per spec */
+  font-family: var(--font-heading);
+  font-size: var(--fs-nav-h2);  /* 1.5em per spec */
   font-weight: 400;
   color: #2a2626;
   margin: 0 0 10px;
-  font-style: italic;
+  font-style: normal;           /* keep clean like mock */
 }
-
-/* You used ::before for “MENU”; style it as the required NAV H2 */
-header nav::before{
-  content: "MENU";
-  display: block;
-  text-align: center;
-  font-family: var(--font-heading);      /* H2 must use Kavoon */
-  font-size: var(--fs-nav-h2);           /* 1.5em per spec */
-  font-weight: 400;
-  color: #2a2626;
-  margin-bottom: 10px;
-  font-style: italic;
-}
-header nav ul{ list-style: none; padding: 0; }
-header nav li + li{ margin-top: 10px; }
-header nav a{
+nav ul{ list-style: none; padding: 0; }
+nav li + li{ margin-top: 10px; }
+nav a{
   display: block;
   text-align: center;
   background: var(--white);
@@ -119,10 +112,11 @@ header nav a{
   font-weight: 900;
   font-size: var(--fs-xs);
   box-shadow: var(--shadow);
-  color: var(--dark); /* visible text on white */
+  color: var(--dark);           /* visible text on white */
+  letter-spacing: .2px;
 }
 
-/* ----- Sections ----- */
+/* ---- Section panels ---- */
 section{
   background: var(--panel);
   color: var(--white);
@@ -130,32 +124,14 @@ section{
 }
 section + section{ margin-top: 14px; }
 
-/* H2, H3, H4 sizes & families per spec */
-section h2{
-  font-family: var(--font-heading);   /* Kavoon */
-  font-size: var(--fs-h2);            /* 2em */
-  line-height: 1.2;
-  margin: 6px 0 2px;
-}
-section h3{
-  font-family: var(--font-body);      /* Inter */
-  font-size: var(--fs-h3);            /* 1.5em */
-  font-weight: 800;
-  color: #ffdda6;                     /* soft contrast subtitle */
-  margin: 0 0 10px;
-}
-section h4{
-  font-family: var(--font-body);      /* Inter */
-  font-size: var(--fs-h4);            /* 1.15em */
-  margin: 0 0 6px;
-  color: #173a87;                     /* navy-ish for card titles */
-  font-weight: 800;
-}
+/* Yellow subheads like mock (“One-on-One Coaching”, etc.) */
+#services > article > h3,
+#pricing > article > h3,
+#services h3{ color: var(--yellow); font-weight: 900; }
 
-/* ----- Service cards (icon + text) ----- */
+/* ---- Service cards (icon + text) ---- */
 #services article{ margin-bottom: 14px; }
 #services > article > h3{ margin-top: 4px; }
-
 #services article article{
   background: var(--card);
   color: var(--ink);
@@ -164,35 +140,46 @@ section h4{
   padding: 16px;
   display: grid;
   grid-template-columns: 64px 1fr;
-  gap: 12px;
+  gap: 14px;
 }
 #services article article + article{ margin-top: 12px; }
 #services img{ width: 56px; height: 56px; margin-top: 4px; }
+#services h4{ color: #173a87; }
 #services p{ margin: 0; color: var(--ink-subtle); font-size: var(--fs-sm); }
 
-/* ----- Why Choose Us tiles ----- */
-#why-choose-us{ padding-bottom: 8px; }
+/* ---- Why Choose Us (coral band + tiles, black text) ---- */
+#why-choose-us{
+  background: var(--cta);        /* coral */
+  color: var(--dark);
+  padding-bottom: 12px;
+  border-radius: var(--round);
+}
+#why-choose-us h2{ color: var(--dark); }
 .benefits{
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 12px;
+  gap: 14px;
+  padding-top: 6px;
 }
 .benefit{
-  border-radius: 12px;
+  border-radius: var(--radius-sm);
   padding: 16px;
   text-align: center;
   font-weight: 800;
   box-shadow: var(--shadow);
-  font-family: var(--font-body);
+  color: var(--dark);            /* ensure black text */
+  line-height: 1.25;
+  background: var(--white);      /* default white tile */
 }
-.benefit:nth-child(1){ background: var(--teal);    color: var(--white); }
-.benefit:nth-child(2){ background: var(--lavender);color: var(--white); }
-.benefit:nth-child(3){ background: var(--yellow);  color: var(--dark);  }
-.benefit:nth-child(4){ background: var(--white);   color: var(--dark);  }
+/* colored tiles like mock */
+.benefit:nth-child(1){ background: var(--teal);    }
+.benefit:nth-child(2){ background: var(--lavender);}
+.benefit:nth-child(3){ background: var(--yellow);  }
+.benefit:nth-child(4){ background: var(--white);   }
 
-/* ----- Pricing ----- */
+/* ---- Pricing tables ---- */
 #pricing article{ margin-bottom: 16px; }
-#pricing h3{ color:#ffdda6; }
+#pricing h3{ color: var(--yellow); }
 #pricing table{
   background: #fff3d1;
   overflow: hidden;
@@ -214,25 +201,20 @@ section h4{
   color: var(--dark);
 }
 
-/* ----- CTA ----- */
+/* ---- CTA (“Take the First Step Today”) ---- */
 #contact{
-  background: var(--cta);
+  background: var(--cta);        /* coral */
   color: var(--white);
-  border-bottom-left-radius: var(--round);
-  border-bottom-right-radius: var(--round);
+  border-radius: var(--round);   /* all corners rounded */
+  padding: 16px 12px 18px;
 }
-#contact h2{
-  font-family: var(--font-heading);     /* Kavoon */
-  font-size: var(--fs-h2);              /* 2em */
-  color: var(--white);
-  margin-top: 6px;
-}
+#contact h2{ color: var(--white); }
 #contact p{
-  background: #ffe6eb;
+  background: #ffe6eb;           /* soft pink bubble */
   color: var(--ink);
   border-radius: var(--radius-sm);
-  padding: 12px;
-  margin: 8px 0 12px;
+  padding: 14px;
+  margin: 10px 0 14px;
   font-size: var(--fs-sm);
 }
 .button{
@@ -245,20 +227,25 @@ section h4{
   border-radius: var(--radius-sm);
   padding: 12px 16px;
   font-weight: 900;
-  box-shadow: var(--shadow);
+  /* mock-like “lifted” button */
+  box-shadow: 0 3px 0 rgba(0,0,0,.35);
 }
 
-/* ----- Footer ----- */
+/* ---- Footer (purple panel) ---- */
 footer{
   width: 100%;
   max-width: 450px;
   margin: 10px auto 30px;
-  color: #e5e7eb;
-  font-size: var(--fs-sm);
+  background: var(--panel);
+  color: var(--white);
   text-align: center;
+  padding: 14px 12px 22px;
+  border-radius: 0 0 var(--round) var(--round);
+  font-size: var(--fs-sm);
 }
-footer a{ text-decoration: underline; color: #e5e7eb; }
+footer p{ margin: 0 0 8px; }
+footer a{ color: var(--white); text-decoration: underline; opacity: .95; }
 
-/* ----- Small helpers ----- */
+/* ---- Small helpers ---- */
 h2 + h3{ margin-top: -2px; }
 #services > h2{ margin-top: 6px; }
